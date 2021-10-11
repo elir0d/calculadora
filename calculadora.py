@@ -1,5 +1,5 @@
 import os
-
+import operacoes as ope
 
 
 class Calculadora():
@@ -22,27 +22,13 @@ class Calculadora():
           self.numero_atual += '.'
 
 
-    def operacoes(self, op, segundaOp):
-            if op == '+':
-                self.primeiro_numero_digitado += segundaOp
-                return self.primeiro_numero_digitado
-            if op == '-':
-                self.primeiro_numero_digitado -= segundaOp
-                return self.primeiro_numero_digitado
-            if op == '*':
-                self.primeiro_numero_digitado *= segundaOp
-                return self.primeiro_numero_digitado
-            if op == '/':
-                self.primeiro_numero_digitado /= segundaOp
-                return self.primeiro_numero_digitado
-            if op == '=':
-                return segundaOp
+
 
     def fazOperacao(self, op):
         if self.primeiro_numero_digitado == None:
             self.primeiro_numero_digitado = int(self.numero_atual)
         elif self.operador:
-            resultado = self.operacoes(self.operador, int(self.numero_atual))
+            resultado = ope.Operacoes.operacoes(self, self.operador, int(self.numero_atual))
             self.numero_atual = str(resultado)
             self.primeiro_numero_digitado = resultado
         
