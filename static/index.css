@@ -1,0 +1,60 @@
+.wrap{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  margin: none;
+}
+
+.screen-section {
+  height: 30%;
+  background: #fff;
+  padding: 10% 5%;
+}
+.screen-section h1 {
+  font-size: 4rem;
+  color: #5e6061;
+}
+.screen-section h3 {
+  color: #b9bbbd;
+  font-size: 1rem;
+}
+.screen-section h3, .screen-section h1 {
+  text-align: right;
+  line-height: 100%;
+}
+.button-section {
+  height: 100%;
+  width: 100%;
+}
+button {
+  background-color: #fff;
+  border-width: thin;
+  border: solid 0.5px #ecedf4;
+  background-color: transparent;
+  font-size: 2rem;
+  color: #6a6d71;
+}
+.operador {
+  color: #fff;
+  background: #1da1f2;
+}
+.operador-especial {
+  background: #f3f9ff;
+}
+.equal-sign {
+  background-color: #657786;
+  border-color: #657786;
+  color: #fff;
+}
+.button-section {
+  height: 70%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.button-section .zero-button {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
