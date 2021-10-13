@@ -20,7 +20,7 @@ class Calculadora(object):
         return self.__numero2
 
 '''Classe que obtem o Contexto'''
-class executarCalculo(object):
+class executaCalculo(object):
     def realiza_calculo(self, numero1: int, numero2: int, icalc) -> int:
         operacao = icalc.calcular(self, numero1, numero2)
         return operacao
@@ -30,23 +30,29 @@ numero2  = None
 operacao = None
 operador = ''
 
+def limpa_tela():
+    os.system('clear')
+
 def main():
 
     global numero1, numero2, operador, operacao
 
-    os.system('clear')
+    limpa_tela()
     numero1  = input('digite o primeiro numero: ')
-    os.system('clear')
+    limpa_tela()
     numero2  = input('digite o segundo numero: ')
-    os.system('clear')
+    limpa_tela()
     operador = input('Digite o operador: ')
-    os.system('clear')
+    limpa_tela()
 
     operacao = contexto.operacao[operador]
                 
 if __name__ == '__main__':
     main()
-    ec = executarCalculo()
+    ec = executaCalculo()
     calc = Calculadora(numero1, numero2)
-    resultado = ec.realiza_calculo(calc.get_numero1(), calc.get_numero2(), operacao)
-    print(f'{numero1} {operador} {numero2} =', resultado, end=' ')
+    numero1 = calc.get_numero1()
+    numero2 = calc.get_numero2()
+
+    resultado = ec.realiza_calculo(int(numero1), int(numero2), operacao)
+    print(f'{numero1} {operador} {numero2} =', resultado, end=' ') if resultado != None else print('Divisão por 0 é inválida', end='')
