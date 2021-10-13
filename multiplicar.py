@@ -1,5 +1,6 @@
-'''Classe com método concreto'''
+from interface import ICalc
 
+'''Classe concreta'''
 class Multiplicar():
-    def multiplica_dois_numeros(self, numero1, numero2):
+    def calcular(self, numero1, numero2):
         return numero1 * numero2

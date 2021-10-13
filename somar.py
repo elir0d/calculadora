@@ -1,5 +1,6 @@
-'''Classe com método concreto'''
+from interface import ICalc
 
-class Somar():
-    def soma_dois_numeros(self, numero1, numero2):
+'''Classe concreta'''
+class Somar(ICalc):
+    def calcular(self, numero1, numero2):
         return numero1 + numero2
