@@ -2,8 +2,6 @@ import os
 import somar
 import interface as ICalc
 
-from somar import Somar
-
 '''Classe Calculadora que contém o programa principal'''
 class Calculadora():
 
