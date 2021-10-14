@@ -2,14 +2,13 @@ from abc import ABC, abstractmethod, abstractclassmethod, abstractstaticmethod
 import somar, subtrair, multiplicar, dividir
 
 '''Fábrica de operadores'''
-
 class IOperadores(ABC):
 
     @abstractstaticmethod
     def cria_operador(self):
         pass
 
-
+'''Classes concretas'''
 class soma(IOperadores):
     def cria_operador(self):
         return somar.Somar
@@ -26,6 +25,7 @@ class divide(IOperadores):
     def cria_operador(self):
         return dividir.Dividir
 
+'''Classe responsável por fabricar os operadores'''
 class FabricarOperador(object):
 
     @staticmethod
@@ -38,5 +38,4 @@ class FabricarOperador(object):
             raise AssertionError('Operador inválido')
         except AssertionError as err:
             print(err)
-
-fab = FabricarOperador
+            

@@ -6,6 +6,7 @@ from somar import Somar
 from subtrair import Subtrair
 from multiplicar import Multiplicar
 from dividir import Dividir
+
 '''Classe Calculadora que contém o programa principal'''
 class Calculadora(object):
 
@@ -19,6 +20,7 @@ class Calculadora(object):
     def get_numero2(self):
         return self.__numero2
 
+'''Classes responsáveis por executar a criação dos operadores e fazer operações'''
 class executaFabrica(object):
     def fabrica_operador(self, operador: str) -> str:
         operacao = fab.FabricarOperador.define_operador(operador)
@@ -29,14 +31,17 @@ class executaCalculo(object):
         operacao = icalc.calcular(self, numero1, numero2)
         return operacao
 
+'''Variáveis gloabis'''
 numero1  = None
 numero2  = None
 operacao = None
 operador = ''
 
+'''Função para limpar tela'''
 def limpa_tela():
     os.system('clear')
 
+'''Programa principal'''
 def main():
 
     global numero1, numero2, operador, operacao
@@ -55,6 +60,7 @@ def main():
     
                 
 if __name__ == '__main__':
+    '''Instancia de classes e execução de programa principal'''
     main()
     ec = executaCalculo()
     calc = Calculadora(numero1, numero2)
