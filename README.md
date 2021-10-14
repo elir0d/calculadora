@@ -26,7 +26,7 @@ python teste_operacoes.py
   
 ## Alunos
 
-- [Rodrigo trindade](https://github.com/elir0d)
+- [Rodrigo Trindade](https://github.com/elir0d)
 - [Sushila Vieira](https://github.com/kylelobo)
 
   
