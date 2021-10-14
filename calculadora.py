@@ -1,6 +1,6 @@
 import os
 import interface
-import contexto
+import FabricaDeOperador as fab
 
 from somar import Somar
 from subtrair import Subtrair
@@ -19,7 +19,11 @@ class Calculadora(object):
     def get_numero2(self):
         return self.__numero2
 
-'''Classe que obtem o Contexto'''
+class executaFabrica(object):
+    def fabrica_operador(self, operador: str) -> str:
+        operacao = fab.FabricarOperador.define_operador(operador)
+        return operacao
+
 class executaCalculo(object):
     def realiza_calculo(self, numero1: int, numero2: int, icalc) -> int:
         operacao = icalc.calcular(self, numero1, numero2)
@@ -45,7 +49,10 @@ def main():
     operador = input('Digite o operador: ')
     limpa_tela()
 
-    operacao = contexto.operacao[operador]
+    ef = executaFabrica()
+    operacao = ef.fabrica_operador(operador)
+
+    
                 
 if __name__ == '__main__':
     main()
