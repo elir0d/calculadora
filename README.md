@@ -9,8 +9,13 @@ Calculadora Simples implemetada usando dois Patterns:
 
 
 ## Intalação
+Instale o [Python](https://www.python.org/downloads/release/python-390/) em sua Máquina.
 
-Para utiliza-la, basta instalar o [Python](https://www.python.org/downloads/release/python-390/)
+Clone o repositório através do comando:
+
+```
+git clone https://github.com/elir0d/calculadora-design-pattern.git
+```
 
 
     
