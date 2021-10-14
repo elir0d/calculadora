@@ -24,7 +24,7 @@ python teste_operacoes.py
 ```
 
   
-## Authors
+## Alunos
 
 - [Rodrigo trindade](https://github.com/elir0d)
 - [Sushila Vieira](https://github.com/kylelobo)
