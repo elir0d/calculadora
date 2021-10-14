@@ -1,8 +1,6 @@
-import calculadora as calc
-import contexto as cont
 import unittest
-
-
+import contexto as cont
+import calculadora as calc
 
 class Testes(unittest.TestCase):
     def test_deveria_somar_dois_numeros_e_retornar_4(self):
