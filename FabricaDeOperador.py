@@ -10,20 +10,36 @@ class IOperadores(ABC):
 
 '''Classes concretas'''
 class soma(IOperadores):
+    def __init__(self):
+        self.operador = '+'
+        self.operacao = somar.Somar
+
     def cria_operador(self):
-        return somar.Somar
+        return {'operador':self.operador, 'operacao':self.operacao}
 
 class diminui(IOperadores):
+    def __init__(self):
+        self.operador = '-'
+        self.operacao = subtrair.Subtrair
+
     def cria_operador(self):
-        return subtrair.Subtrair
+        return {'operador':self.operador, 'operacao':self.operacao}
 
 class multiplica(IOperadores):
+    def __init__(self):
+        self.operador = '*'
+        self.operacao = multiplicar.Multiplicar
+
     def cria_operador(self):
-        return multiplicar.Multiplicar
+        return {'operador':self.operador, 'operacao':self.operacao}
 
 class divide(IOperadores):
+    def __init__(self):
+        self.operador = '/'
+        self.operacao = dividir.Dividir
+
     def cria_operador(self):
-        return dividir.Dividir
+        return {'operador':self.operador, 'operacao':self.operacao}
 
 '''Classe responsável por fabricar os operadores'''
 class FabricarOperador(object):
@@ -38,4 +54,7 @@ class FabricarOperador(object):
             raise AssertionError('Operador inválido')
         except AssertionError as err:
             print(err)
-            
+
+if __name__ == '__main__':
+    OPERADOR = FabricarOperador.define_operador('+')
+    print(OPERADOR)

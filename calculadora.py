@@ -23,8 +23,9 @@ class Calculadora(object):
 '''Classes responsáveis por executar a criação dos operadores e fazer operações'''
 class executaFabrica(object):
     def fabrica_operador(self, operador: str) -> str:
+        operacao = {}
         operacao = fab.FabricarOperador.define_operador(operador)
-        return operacao
+        return operacao['operacao']
 
 class executaCalculo(object):
     def realiza_calculo(self, numero1: int, numero2: int, icalc) -> int:
