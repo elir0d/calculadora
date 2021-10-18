@@ -27,7 +27,7 @@ class Testes(unittest.TestCase):
         self.assertEqual(calc.executaCalculo.realiza_calculo(self, 2, 0, operacao), None)
 
     def test_deveria_criar_a_operacao_de_somar_e_retornar_um_dicionario(self):
-        operacao = fab.FabricarOperador.define_operador('/')
+        operacao = fab.FabricarOperador.define_operador('+')
         self.assertEqual(operacao, {'operador':'+', 'operacao': somar.Somar})
         self.assertTrue(isinstance(operacao, dict))
    
