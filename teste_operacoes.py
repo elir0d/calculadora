@@ -1,6 +1,7 @@
 import unittest
 import FabricaDeOperador as fab
 import calculadora as calc
+import somar, subtrair, multiplicar, dividir
 
 ef = calc.executaFabrica()
 class Testes(unittest.TestCase):
@@ -24,6 +25,18 @@ class Testes(unittest.TestCase):
         operacao = ef.fabrica_operador('/')
         self.assertEqual(calc.executaCalculo.realiza_calculo(self, 0, 0, operacao), None)
         self.assertEqual(calc.executaCalculo.realiza_calculo(self, 2, 0, operacao), None)
+
+    def test_deveria_criar_a_operacao_de_somar_e_retornar_um_dicionario(self):
+        self.assertEqual(fab.FabricarOperador.define_operador('+'), {'operador':'+', 'operacao': somar.Somar})
+   
+    def test_deveria_criar_a_operacao_de_subtrair_e_retornar_um_dicionario(self):
+        self.assertEqual(fab.FabricarOperador.define_operador('-'), {'operador':'-', 'operacao': subtrair.Subtrair})
+   
+    def test_deveria_criar_a_operacao_de_multiplicar_e_retornar_um_dicionario(self):
+        self.assertEqual(fab.FabricarOperador.define_operador('*'), {'operador':'*', 'operacao': multiplicar.Multiplicar})
+   
+    def test_deveria_criar_a_operacao_de_dividir_e_retornar_um_dicionario(self):
+        self.assertEqual(fab.FabricarOperador.define_operador('/'), {'operador':'/', 'operacao': dividir.Dividir})
 
 def runTests():
     suite = unittest.defaultTestLoader.loadTestsFromTestCase(Testes)
