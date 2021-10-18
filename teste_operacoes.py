@@ -27,16 +27,24 @@ class Testes(unittest.TestCase):
         self.assertEqual(calc.executaCalculo.realiza_calculo(self, 2, 0, operacao), None)
 
     def test_deveria_criar_a_operacao_de_somar_e_retornar_um_dicionario(self):
-        self.assertEqual(fab.FabricarOperador.define_operador('+'), {'operador':'+', 'operacao': somar.Somar})
+        operacao = fab.FabricarOperador.define_operador('/')
+        self.assertEqual(operacao, {'operador':'+', 'operacao': somar.Somar})
+        self.assertTrue(isinstance(operacao, dict))
    
     def test_deveria_criar_a_operacao_de_subtrair_e_retornar_um_dicionario(self):
-        self.assertEqual(fab.FabricarOperador.define_operador('-'), {'operador':'-', 'operacao': subtrair.Subtrair})
+        operacao = fab.FabricarOperador.define_operador('-')
+        self.assertEqual(operacao, {'operador':'-', 'operacao': subtrair.Subtrair})
+        self.assertTrue(isinstance(operacao, dict))
    
     def test_deveria_criar_a_operacao_de_multiplicar_e_retornar_um_dicionario(self):
-        self.assertEqual(fab.FabricarOperador.define_operador('*'), {'operador':'*', 'operacao': multiplicar.Multiplicar})
+        operacao = fab.FabricarOperador.define_operador('*')
+        self.assertEqual(operacao, {'operador':'*', 'operacao': multiplicar.Multiplicar})
+        self.assertTrue(isinstance(operacao, dict))
    
     def test_deveria_criar_a_operacao_de_dividir_e_retornar_um_dicionario(self):
-        self.assertEqual(fab.FabricarOperador.define_operador('/'), {'operador':'/', 'operacao': dividir.Dividir})
+        operacao = fab.FabricarOperador.define_operador('/')
+        self.assertEqual(operacao, {'operador':'/', 'operacao': dividir.Dividir})
+        self.assertTrue(isinstance(operacao, dict))
 
 def runTests():
     suite = unittest.defaultTestLoader.loadTestsFromTestCase(Testes)
