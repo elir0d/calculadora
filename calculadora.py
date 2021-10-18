@@ -7,7 +7,7 @@ from subtrair import Subtrair
 from multiplicar import Multiplicar
 from dividir import Dividir
 
-'''Classe Calculadora que contém o programa principal'''
+'''Classe Calculadora que contém os atributos para ralizar as operações'''
 class Calculadora(object):
 
     def __init__(self, numero1, numero2):
@@ -20,19 +20,20 @@ class Calculadora(object):
     def get_numero2(self):
         return self.__numero2
 
-'''Classes responsáveis por executar a criação dos operadores e fazer operações'''
+'''Classe responsável por executar a criação dos operadores'''
 class executaFabrica(object):
     def fabrica_operador(self, operador: str) -> str:
         operacao = {}
         operacao = fab.FabricarOperador.define_operador(operador)
         return operacao['operacao']
 
+'''Classe responsável por executar as operações'''
 class executaCalculo(object):
     def realiza_calculo(self, numero1: int, numero2: int, icalc) -> int:
         operacao = icalc.calcular(self, numero1, numero2)
         return operacao
 
-'''Variáveis gloabis'''
+'''Variáveis globais'''
 numero1  = None
 numero2  = None
 operacao = None
