@@ -1,3 +1,5 @@
+from ast import If
+from pprint import pprint
 import unittest
 import FabricaDeOperador as fab
 import calculadora as calc
@@ -45,6 +47,9 @@ class Testes(unittest.TestCase):
         operacao = fab.FabricarOperador.define_operador('/')
         self.assertEqual(operacao, {'operador':'/', 'operacao': dividir.Dividir})
         self.assertTrue(isinstance(operacao, dict))
+        
+    def test_deveria_criar(self):
+        if(True): return print("teste concluido")
 
 def runTests():
     suite = unittest.defaultTestLoader.loadTestsFromTestCase(Testes)
